@@ -32,10 +32,10 @@ const ArticleDetail = () => {
         className="w-full aspect-[21/9] overflow-hidden relative"
       >
         <img src={article.image} alt={article.title} className="img-cover h-full" width={1920} height={823} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
         <div className="absolute bottom-0 left-0 right-0 container-wide pb-12">
           <span className="label-sm text-accent">{article.category}</span>
-          <h1 className="heading-xl mt-3 text-foreground max-w-4xl">{article.title}</h1>
+          <h1 className="heading-xl mt-3 text-white max-w-4xl drop-shadow-lg">{article.title}</h1>
         </div>
       </motion.div>
 
