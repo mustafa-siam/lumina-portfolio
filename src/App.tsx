@@ -5,12 +5,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 import Projects from "./pages/Projects.tsx";
 import ProjectDetail from "./pages/ProjectDetail.tsx";
 import About from "./pages/About.tsx";
 import Services from "./pages/Services.tsx";
 import Contact from "./pages/Contact.tsx";
+import Journal from "./pages/Journal.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,6 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -29,6 +32,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/journal" element={<Journal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
