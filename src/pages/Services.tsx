@@ -1,38 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
-
-const services = [
-  {
-    num: "01",
-    title: "Architectural Design",
-    desc: "From residential masterpieces to commercial landmarks, we design buildings that define their context and inspire their occupants.",
-    details: ["Concept Development", "Schematic Design", "Design Development", "Construction Documents", "Construction Administration"],
-  },
-  {
-    num: "02",
-    title: "Interior Design",
-    desc: "We craft interiors that are as intentional as they are beautiful — spaces where every texture, color, and light source serves the human experience.",
-    details: ["Space Planning", "Material Selection", "Custom Furniture Design", "Lighting Design", "Art Curation"],
-  },
-  {
-    num: "03",
-    title: "Master Planning",
-    desc: "For large-scale developments, we create master plans that balance density with delight, infrastructure with intimacy.",
-    details: ["Site Analysis", "Zoning Strategy", "Phasing Plans", "Community Engagement", "Sustainability Integration"],
-  },
-  {
-    num: "04",
-    title: "Renovation & Restoration",
-    desc: "We breathe new life into existing structures, honoring their heritage while redefining their future.",
-    details: ["Historic Preservation", "Adaptive Reuse", "Structural Assessment", "Modern Integration", "Permit Navigation"],
-  },
-  {
-    num: "05",
-    title: "Consultation",
-    desc: "Not every project needs full-service design. Our expert consultation helps you make informed decisions at any stage.",
-    details: ["Design Review", "Feasibility Studies", "Budget Planning", "Vendor Selection", "Project Strategy"],
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { services } from "@/lib/services";
 
 const process = [
   { step: "01", title: "Discovery", desc: "We listen. Deep conversations about your vision, needs, and the way you want to feel in your space." },
@@ -64,25 +33,32 @@ const Services = () => {
       <section className="pb-24 md:pb-32">
         <div className="container-wide">
           {services.map((s, i) => (
-            <ScrollReveal key={s.num} delay={i * 0.05}>
-              <div className="border-t border-border py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <ScrollReveal key={s.id} delay={i * 0.05}>
+              <Link
+                to={`/services/${s.id}`}
+                className="group block border-t border-border py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 hover:bg-secondary/40 transition-colors px-2 -mx-2"
+              >
                 <div className="lg:col-span-1">
                   <span className="label-sm text-accent">{s.num}</span>
                 </div>
                 <div className="lg:col-span-4">
-                  <h3 className="heading-md text-foreground">{s.title}</h3>
+                  <h3 className="heading-md text-foreground group-hover:text-accent transition-colors">{s.title}</h3>
+                  <p className="label-sm mt-2">{s.tagline}</p>
                 </div>
                 <div className="lg:col-span-4">
                   <p className="body-md">{s.desc}</p>
                 </div>
                 <div className="lg:col-span-3">
                   <ul className="space-y-2">
-                    {s.details.map((d) => (
+                    {s.details.slice(0, 4).map((d) => (
                       <li key={d} className="text-sm text-muted-foreground">— {d}</li>
                     ))}
                   </ul>
+                  <span className="inline-flex items-center gap-2 label-sm text-accent mt-5">
+                    Explore Service <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
