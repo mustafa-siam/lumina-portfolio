@@ -342,7 +342,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {articles.map((a, i) => (
               <ScrollReveal key={a.id} delay={i * 0.1}>
-                <Link to="/journal" className="group block">
+                <Link to={`/journal/${a.id}`} className="group block">
                   <div className="overflow-hidden rounded-sm">
                     <img
                       src={a.image}
