@@ -77,12 +77,12 @@ const Index = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 2.5, ease: "easeOut" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
         </div>
 
         {/* Side label */}
-        <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-left label-sm text-foreground/60">
+        <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-left label-sm text-white/60">
           <span>Est. 2012 — New York · Dubai · Bali</span>
         </div>
 
@@ -93,24 +93,24 @@ const Index = () => {
             transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <span className="label-sm text-accent">Architecture · Interior Design · Master Planning</span>
-            <h1 className="heading-xl mt-4 max-w-5xl text-foreground">
+            <h1 className="heading-xl mt-4 max-w-5xl text-white drop-shadow-lg">
               We Design Spaces<br />
               <span className="italic font-extralight">That Shape Lives</span>
             </h1>
-            <p className="body-lg mt-6 max-w-xl">
+            <p className="text-lg md:text-xl leading-relaxed mt-6 max-w-xl text-white/85">
               An award-winning studio crafting extraordinary residential, commercial, and hospitality spaces across four continents — for clients who refuse to settle.
             </p>
             <div className="flex flex-wrap gap-4 mt-10">
               <Link
                 to="/projects"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background font-heading text-sm font-medium tracking-wider uppercase hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-heading text-sm font-medium tracking-wider uppercase hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
               >
                 View Our Work
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 border border-foreground text-foreground font-heading text-sm font-medium tracking-wider uppercase hover:bg-foreground hover:text-background transition-colors duration-300"
+                className="inline-flex items-center px-8 py-4 border border-white text-white font-heading text-sm font-medium tracking-wider uppercase hover:bg-white hover:text-black transition-colors duration-300"
               >
                 Start a Project
               </Link>
@@ -124,8 +124,8 @@ const Index = () => {
                 { v: "12", l: "Awards" },
               ].map((h) => (
                 <div key={h.l}>
-                  <div className="font-heading text-3xl md:text-4xl font-light text-foreground">{h.v}</div>
-                  <div className="label-sm mt-1">{h.l}</div>
+                  <div className="font-heading text-3xl md:text-4xl font-light text-white">{h.v}</div>
+                  <div className="text-xs uppercase tracking-[0.2em] font-medium text-white/70 mt-1 font-heading">{h.l}</div>
                 </div>
               ))}
             </div>
@@ -136,7 +136,7 @@ const Index = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-6 right-6 label-sm text-foreground/60"
+          className="absolute bottom-6 right-6 label-sm text-white/70"
         >
           Scroll ↓
         </motion.div>
