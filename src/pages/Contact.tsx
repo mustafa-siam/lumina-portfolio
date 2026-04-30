@@ -1,150 +1,198 @@
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", type: "", budget: "", message: "" });
+  const [form, setForm] = useState({ 
+    name: "", 
+    email: "", 
+    phone: "", 
+    type: "", 
+    budget: "", 
+    message: "" 
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message Sent", description: "We'll get back to you within 24 hours." });
+    toast({ 
+      title: "Message Sent", 
+      description: "We'll get back to you within 24 hours." 
+    });
     setForm({ name: "", email: "", phone: "", type: "", budget: "", message: "" });
   };
 
   return (
-    <main className="pt-20">
+    <main className="pt-24 min-h-screen bg-background">
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {/* Left */}
-            <ScrollReveal>
-              <span className="label-sm text-accent">Get In Touch</span>
-              <h1 className="heading-xl mt-3 text-foreground">Let's Talk</h1>
-              <p className="body-lg mt-6">
-                Every extraordinary space begins with a conversation. Whether you have a clear vision or just a feeling — we'd love to hear from you.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+            
+            {/* LEFT COLUMN: Intro + Form */}
+            <div className="lg:col-span-7">
+              <ScrollReveal>
+                <span className="text-sm font-semibold text-accent tracking-[0.2em] uppercase">
+                  Inquiry
+                </span>
+                <h1 className="heading-xl mt-4 text-foreground leading-none">
+                  Let's Talk
+                </h1>
+                <p className="text-lg md:text-xl mt-8 text-muted-foreground max-w-xl leading-relaxed">
+                  Every extraordinary space begins with a conversation. Whether you have 
+                  a clear vision or just a feeling — we'd love to hear from you.
+                </p>
+              </ScrollReveal>
 
-              <div className="mt-16 space-y-8">
-                <div>
-                  <h3 className="label-sm mb-2">Email</h3>
-                  <a href="mailto:hello@Lumina.studio" className="heading-sm text-foreground hover:text-accent transition-colors">
-                    hello@Lumina.studio
-                  </a>
-                </div>
-                <div>
-                  <h3 className="label-sm mb-2">Phone</h3>
-                  <a href="tel:+12125551234" className="heading-sm text-foreground hover:text-accent transition-colors">
-                    +1 (212) 555-1234
-                  </a>
-                </div>
-                <div>
-                  <h3 className="label-sm mb-2">New York Office</h3>
-                  <p className="body-md">245 West 29th Street, Suite 800<br />New York, NY 10001</p>
-                </div>
-                <div>
-                  <h3 className="label-sm mb-2">Dubai Office</h3>
-                  <p className="body-md">Tower 1, Level 42, DIFC<br />Dubai, UAE</p>
-                </div>
-              </div>
-            </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <form onSubmit={handleSubmit} className="mt-16 space-y-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className="relative group">
+                      <label className="text-xs uppercase tracking-[0.15em] text-accent font-bold mb-2 block">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        className="w-full bg-transparent border-b border-border py-4 text-lg text-foreground focus:border-accent outline-none transition-all font-body placeholder:text-muted-foreground/30"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div className="relative group">
+                      <label className="text-xs uppercase tracking-[0.15em] text-accent font-bold mb-2 block">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className="w-full bg-transparent border-b border-border py-4 text-lg text-foreground focus:border-accent outline-none transition-all font-body placeholder:text-muted-foreground/30"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
 
-            {/* Form */}
-            <ScrollReveal delay={0.2}>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="label-sm mb-2 block">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:border-accent outline-none transition-colors font-body"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label className="label-sm mb-2 block">Email *</label>
-                    <input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:border-accent outline-none transition-colors font-body"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="label-sm mb-2 block">Phone</label>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:border-accent outline-none transition-colors font-body"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-                  <div>
-                    <label className="label-sm mb-2 block">Project Type</label>
-                    <div className="w-full overflow-hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                      <label className="text-xs uppercase tracking-[0.15em] text-accent font-bold mb-2 block">
+                        Project Type
+                      </label>
                       <select
                         value={form.type}
                         onChange={(e) => setForm({ ...form, type: e.target.value })}
-                        className="w-full min-w-0 bg-transparent cursor-pointer border-b border-border py-3 text-foreground focus:border-accent outline-none transition-colors font-body"
+                        className="w-full bg-transparent border-b border-border py-4 text-lg text-foreground focus:border-accent outline-none transition-all font-body appearance-none cursor-pointer"
                       >
-                        <option value="">Select type</option>
-                        <option value="residential">Residential</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="hospitality">Hospitality</option>
-                        <option value="interior">Interior Design</option>
-                        <option value="renovation">Renovation</option>
-                        <option value="consultation">Consultation</option>
+                        <option value="" className="bg-background">Select type</option>
+                        <option value="architectural" className="bg-background">Architectural Design</option>
+                        <option value="interior" className="bg-background">Interior Design</option>
+                        <option value="master-planning" className="bg-background">Master Planning</option>
+                        <option value="renovation" className="bg-background">Renovation</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-xs uppercase tracking-[0.15em] text-accent font-bold mb-2 block">
+                        Budget Range
+                      </label>
+                      <select
+                        value={form.budget}
+                        onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                        className="w-full bg-transparent border-b border-border py-4 text-lg text-foreground focus:border-accent outline-none transition-all font-body appearance-none cursor-pointer"
+                      >
+                        <option value="" className="bg-background">Select range</option>
+                        <option value="100k-500k" className="bg-background">$100K – $500K</option>
+                        <option value="500k-1m" className="bg-background">$500K – $1M</option>
+                        <option value="1m-plus" className="bg-background">$1M+</option>
                       </select>
                     </div>
                   </div>
-                </div>
 
-                <div>
-                  <label className="label-sm mb-2 block">Estimated Budget</label>
-                  <div className="w-full overflow-hidden">
-                    <select
-                      value={form.budget}
-                      onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                      className="w-full min-w-0 bg-transparent border-b border-border py-3 text-foreground focus:border-accent outline-none transition-colors font-body cursor-pointer"
-                    >
-                      <option value="">Select range</option>
-                      <option value="100k-500k">$100K – $500K</option>
-                      <option value="500k-1m">$500K – $1M</option>
-                      <option value="1m-5m">$1M – $5M</option>
-                      <option value="5m+">$5M+</option>
-                    </select>
+                  <div>
+                    <label className="text-xs uppercase tracking-[0.15em] text-accent font-bold mb-2 block">
+                      Your Vision *
+                    </label>
+                    <textarea
+                      required
+                      rows={4}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className="w-full bg-transparent border-b border-border py-4 text-lg text-foreground focus:border-accent outline-none transition-all resize-none font-body placeholder:text-muted-foreground/30"
+                      placeholder="Tell us about your project, goals, and requirements..."
+                    />
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full md:w-auto px-16 py-5 bg-foreground text-background font-heading text-xs tracking-[0.3em] uppercase transition-colors duration-500 hover:bg-accent hover:text-white"
+                  >
+                    Send Message
+                  </motion.button>
+                </form>
+              </ScrollReveal>
+            </div>
+
+            {/* RIGHT COLUMN: Contact Details */}
+            <div className="lg:col-span-5 lg:pl-12">
+              <ScrollReveal delay={0.4}>
+                <div className="sticky top-32 space-y-16 p-10 md:p-14 bg-card/40 border border-border/60 rounded-[2rem] backdrop-blur-xl">
+                  
+                  {/* Digital Contact */}
+                  <div className="space-y-12">
+                    <div className="group">
+                      <h3 className="text-xs uppercase tracking-[0.25em] text-accent/80 font-bold mb-5">
+                        Email
+                      </h3>
+                      <a 
+                        href="mailto:hello@Lumina.studio" 
+                        className="text-2xl md:text-3xl text-foreground hover:text-accent transition-colors duration-300 font-heading block"
+                      >
+                        hello@lumina.studio
+                      </a>
+                    </div>
+
+                    <div className="group">
+                      <h3 className="text-xs uppercase tracking-[0.25em] text-accent/80 font-bold mb-5">
+                        Phone
+                      </h3>
+                      <a 
+                        href="tel:+12125551234" 
+                        className="text-2xl md:text-3xl text-foreground hover:text-accent transition-colors duration-300 font-heading block"
+                      >
+                        +1 (212) 555-1234
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Physical Locations */}
+                  <div className="pt-12 border-t border-border/30 space-y-12">
+                    <div>
+                      <h3 className="text-xs uppercase tracking-[0.25em] text-accent/80 font-bold mb-5">
+                        New York Studio
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        245 West 29th Street, Suite 800<br />
+                        New York, NY 10001
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xs uppercase tracking-[0.25em] text-accent/80 font-bold mb-5">
+                        Dubai Office
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        Tower 1, Level 42, DIFC<br />
+                        Dubai, UAE
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </ScrollReveal>
+            </div>
 
-                <div>
-                  <label className="label-sm mb-2 block">Tell Us About Your Vision *</label>
-                  <textarea
-                    required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:border-accent outline-none transition-colors resize-none font-body"
-                    placeholder="Describe your project, goals, and any specific requirements..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full md:w-auto px-12 py-4 bg-foreground text-background font-heading text-sm font-medium tracking-wider uppercase hover:bg-accent hover:text-accent-foreground transition-colors duration-300 mt-4"
-                >
-                  Send Message
-                </button>
-              </form>
-            </ScrollReveal>
           </div>
         </div>
       </section>

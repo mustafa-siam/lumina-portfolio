@@ -30,6 +30,8 @@ export const services: Service[] = [
     faq: [
       { q: "How long does a typical residential project take?", a: "From concept to occupancy, expect 18–30 months depending on scale and jurisdiction." },
       { q: "Do you work outside the US?", a: "Yes. We have active projects across 8 countries with offices in NYC, Dubai, and Bali." },
+      { q: "How do you integrate sustainability into your designs?", a: "We employ passive design principles, sustainable material sourcing, and energy-efficient systems as standard across all architectural projects." },
+      { q: "Do you assist with the contractor bidding process?", a: "Yes. We help manage the tendering process, evaluate bids, and recommend contractors who align with the project's quality and budget requirements." },
     ],
     startingPrice: "From $250K",
     timeline: "12–30 months",
@@ -51,6 +53,8 @@ export const services: Service[] = [
     faq: [
       { q: "Do you source vintage pieces?", a: "Yes. We have a global network of dealers and often blend vintage with bespoke commissions." },
       { q: "Can you work with our existing architecture?", a: "Absolutely. Many of our most loved projects are interior-only." },
+      { q: "Do you handle the procurement of furniture and materials?", a: "Yes, we offer full procurement services, including ordering, tracking, and coordinating deliveries to ensure a seamless installation." },
+      { q: "How do you handle custom furniture or millwork?", a: "We provide detailed shop drawings and collaborate with expert craftsmen to create bespoke pieces tailored specifically to your space." },
     ],
     startingPrice: "From $120K",
     timeline: "6–14 months",
@@ -72,6 +76,8 @@ export const services: Service[] = [
     faq: [
       { q: "What's the minimum site size?", a: "We typically engage on sites of 5 acres or larger." },
       { q: "Do you handle entitlements?", a: "We coordinate with local counsel and have led successful entitlement campaigns globally." },
+      { q: "How do you balance environmental impact with density?", a: "Our approach integrates green infrastructure and ecological restoration into the urban fabric to ensure long-term site resilience." },
+      { q: "Can you help with community and stakeholder presentations?", a: "Yes. We provide high-fidelity visualizations and strategic reports to facilitate communication with local boards and community groups." },
     ],
     startingPrice: "From $500K",
     timeline: "9–24 months",
@@ -93,6 +99,8 @@ export const services: Service[] = [
     faq: [
       { q: "Do you work on listed buildings?", a: "Yes. We've completed several Grade II and landmark restorations." },
       { q: "Can renovation be more expensive than new build?", a: "Sometimes. We provide transparent feasibility before committing." },
+      { q: "How do you handle unforeseen structural issues discovered during demolition?", a: "We maintain a flexible design approach and include contingency planning in our documentation to address on-site discoveries efficiently." },
+      { q: "Do you modernize old buildings for energy efficiency?", a: "Absolutely. We specialize in sensitive upgrades that improve thermal performance and energy systems without compromising historic character." },
     ],
     startingPrice: "From $180K",
     timeline: "10–24 months",
@@ -114,6 +122,8 @@ export const services: Service[] = [
     faq: [
       { q: "Do you offer hourly engagements?", a: "Yes. Consultation is billed hourly or as fixed-scope packages." },
       { q: "Can consultation lead to full design work?", a: "Often, yes — but there's no obligation either way." },
+      { q: "Can you provide a feasibility study before I purchase a property?", a: "Yes. We offer pre-acquisition audits to help you understand the potential and limitations of a site before you commit to a purchase." },
+      { q: "Do you review third-party architectural plans?", a: "We provide 'Second Opinion' reviews to ensure your plans are optimized for space, budget, and design quality." },
     ],
     startingPrice: "From $5K",
     timeline: "2–8 weeks",

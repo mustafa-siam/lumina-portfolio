@@ -131,23 +131,61 @@ const ServiceDetail = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding-sm">
-        <div className="container-wide max-w-3xl">
-          <ScrollReveal>
-            <span className="label-sm text-accent">Common Questions</span>
-            <h2 className="heading-lg mt-2 text-foreground">FAQ</h2>
-          </ScrollReveal>
-          <Accordion type="single" collapsible className="mt-8">
-            {service.faq.map((f, i) => (
-              <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left font-heading text-foreground">{f.q}</AccordionTrigger>
-                <AccordionContent className="body-md">{f.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+     <section className="section-padding-sm bg-background">
+      <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+         
+        {/* Left Side: Content */}
+        <div className="lg:col-span-5 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="label-sm text-accent uppercase tracking-widest font-semibold">
+              Common Questions
+            </span>
+            <h2 className="heading-lg mt-4 text-foreground leading-tight">
+                   Frequently Asked Questions
+            </h2>
+            <p className="body-md mt-6 text-muted-foreground max-w-md">
+              Have questions about our process, delivery, or pricing? We’ve compiled answers 
+              to the most frequent inquiries to help you get started quickly.
+            </p>
+          </motion.div>
         </div>
-      </section>
 
+        {/* Right Side: FAQ Accordion */}
+        <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {service.faq.map((f, i) => (
+                <AccordionItem 
+                  key={i} 
+                  value={`item-${i}`} 
+                  className="border border-border/50 rounded-xl px-6 bg-card/30 backdrop-blur-sm transition-all hover:bg-card/50"
+                >
+                  <AccordionTrigger className="text-left font-heading text-lg py-5 hover:no-underline group">
+                    <span className="group-hover:text-accent transition-colors">
+                      {f.q}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="body-md pb-6 text-muted-foreground leading-relaxed">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+        
+      </div>
+    </section>
       {/* Other services */}
       <section className="section-padding-sm bg-secondary">
         <div className="container-wide">

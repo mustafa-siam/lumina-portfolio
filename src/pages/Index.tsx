@@ -1,3 +1,4 @@
+"use client";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Award, Sparkles, Users } from "lucide-react";
@@ -8,6 +9,7 @@ import { projects } from "@/lib/projects";
 import { articles } from "@/lib/journal";
 import heroImage from "@/assets/hero-1.jpg";
 import founderImage from "@/assets/founder.jpg";
+import { useState } from "react";
 
 const stats = [
   { value: "150+", label: "Projects Completed" },
@@ -61,7 +63,7 @@ const valueProps = [
 
 const Index = () => {
   const featuredProjects = projects.slice(0, 4);
-
+const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <main>
       {/* HERO */}
@@ -145,7 +147,6 @@ const Index = () => {
       {/* PRESS / SOCIAL PROOF MARQUEE */}
       <section className="border-y border-border py-8 overflow-hidden bg-secondary/40">
         <div className="container-wide mb-4">
-          <p className="label-sm text-center">As Featured In</p>
         </div>
         <div className="relative flex overflow-hidden">
           <div className="flex marquee gap-16 whitespace-nowrap">
@@ -383,14 +384,26 @@ const Index = () => {
               { q: "Do you handle construction as well?", a: "We do not contract construction directly, but we manage and supervise it end-to-end through our trusted partner network in every market we serve." },
               { q: "How is fee structured?", a: "Most projects use a percentage-of-construction-cost model (typically 10–18%) with a clearly scoped phased deliverable schedule. Lump-sum and hybrid models are also available." },
             ].map((f, i) => (
-              <details key={i} className="group bg-background p-6 cursor-pointer">
-                <summary className="flex items-center justify-between font-heading text-lg text-foreground list-none">
-                  {f.q}
-                  <span className="text-accent text-2xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <p className="body-md mt-3">{f.a}</p>
-              </details>
-            ))}
+  <div key={i} className="bg-background p-6 cursor-pointer">
+    <div
+      onClick={() => setOpenIndex(openIndex === i ? null : i)}
+      className="flex items-center justify-between font-heading text-lg text-foreground"
+    >
+      {f.q}
+      <span
+        className={`text-accent text-2xl transition-transform ${
+          openIndex === i ? "rotate-45" : ""
+        }`}
+      >
+        +
+      </span>
+    </div>
+
+    {openIndex === i && (
+      <p className="body-md mt-3">{f.a}</p>
+    )}
+  </div>
+))}
           </div>
         </div>
       </section>
