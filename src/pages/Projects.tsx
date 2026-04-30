@@ -32,7 +32,7 @@ const Projects = () => {
                 className={`label-sm px-5 py-2.5 border transition-colors duration-300 ${
                   activeCategory === cat
                     ? "bg-foreground text-background border-foreground"
-                    : "border-border text-muted-foreground hover:text-foreground hover:border-foreground"
+                    : "border-border text-muted-foreground hover:text-accent hover:border-foreground"
                 }`}
               >
                 {cat}

@@ -117,7 +117,7 @@ export const projects: Project[] = [
       { title: "Discovery & Site Analysis", desc: "Months 1–2 — geotechnical, climate and lifestyle research." },
       { title: "Concept & Schematic", desc: "Months 3–6 — three design directions explored, one refined." },
       { title: "Design Development", desc: "Months 7–10 — every detail specified, engineered and costed." },
-      { title: "Construction", desc: "Months 11–22 — full-time on-site supervision by AURA principals." },
+      { title: "Construction", desc: "Months 11–22 — full-time on-site supervision by Lumina principals." },
     ],
     facts: [
       { label: "Bedrooms", value: "6" },
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "AURA didn't just design our home — they understood how we wanted to feel in it. Every room tells a story.",
+        "Lumina didn't just design our home — they understood how we wanted to feel in it. Every room tells a story.",
       author: "Sarah & James Mitchell",
     },
   },
@@ -348,7 +348,7 @@ export const projects: Project[] = [
     drawings: baseDrawings,
     facilities: [
       "42 Bespoke Suites",
-      "Rooftop Restaurant & Bar",
+      "Rooftop RestLuminant & Bar",
       "Spa & Hammam",
       "Library Lounge",
       "Event Atelier",

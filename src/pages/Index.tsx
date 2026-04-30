@@ -18,12 +18,12 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "AURA didn't just design our home — they understood how we wanted to feel in it. Every room tells a story, and every story is ours.",
+    quote: "Lumina didn't just design our home — they understood how we wanted to feel in it. Every room tells a story, and every story is ours.",
     author: "Sarah & James Mitchell",
     role: "Sunset Villa, Malibu",
   },
   {
-    quote: "Working with AURA transformed our brand's physical presence. The space they created drives 40% more foot traffic and reframed how guests experience luxury.",
+    quote: "Working with Lumina transformed our brand's physical presence. The space they created drives 40% more foot traffic and reframed how guests experience luxury.",
     author: "David Chen",
     role: "CEO, Luminary Hotels",
   },
@@ -33,7 +33,7 @@ const testimonials = [
     role: "Director, Urban Development Corp",
   },
   {
-    quote: "From the first conversation to the last walkthrough, AURA treated our project like the only one they had. The detail and devotion show in every corner.",
+    quote: "From the first conversation to the last walkthrough, Lumina treated our project like the only one they had. The detail and devotion show in every corner.",
     author: "Rashid Al-Mansoori",
     role: "Skyline Penthouse, Dubai",
   },
@@ -234,7 +234,7 @@ const Index = () => {
           <ScrollReveal delay={0.2}>
             <img
               src={founderImage}
-              alt="Elena Cortez, Founder of AURA Studio"
+              alt="Elena Cortez, Founder of Lumina Studio"
               loading="lazy"
               width={800}
               height={1000}
@@ -266,7 +266,7 @@ const Index = () => {
                   <p className="body-md mt-3">{service.desc}</p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center mt-6 text-sm text-muted-foreground hover:text-foreground transition-colors gap-1"
+                    className="inline-flex items-center mt-6 text-sm text-muted-foreground hover:text-accent transition-colors gap-1"
                   >
                     Learn more →
                   </Link>

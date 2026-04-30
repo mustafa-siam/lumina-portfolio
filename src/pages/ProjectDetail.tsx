@@ -52,16 +52,16 @@ const ProjectDetail = () => {
         <img src={project.image} alt={project.title} width={1920} height={823} className="img-cover h-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 container-wide pb-10">
-          <span className="label-sm text-accent">{project.category}</span>
           <h1 className="heading-xl mt-2 text-foreground">{project.title}</h1>
-          <p className="text-foreground/80 mt-2">{project.location} — {project.year}</p>
+          <p className="text-foreground/80 mt-2 ml-6">{project.location} — {project.year}</p>
+          <span className="label-sm text-foreground/60 font-bold ml-6">{project.category}</span>
         </div>
       </motion.div>
 
       {/* OVERVIEW */}
       <section className="section-padding-sm">
         <div className="container-wide">
-          <Link to="/projects" className="label-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/projects" className="label-sm text-muted-foreground hover:text-accent transition-colors">
             ← Back to All Projects
           </Link>
 
@@ -280,7 +280,7 @@ const ProjectDetail = () => {
           <ScrollReveal delay={0.1}>
             <span className="label-sm text-accent">Scope of Work</span>
             <h2 className="heading-md mt-2 text-foreground">Deliverables</h2>
-            <ul className="mt-6 divide-y divide-border">
+            <ul className="mt-6 ">
               {project.deliverables.map((d, i) => (
                 <li key={d} className="flex items-center gap-4 py-3">
                   <span className="font-heading text-accent text-sm w-8">0{i + 1}</span>

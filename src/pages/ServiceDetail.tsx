@@ -33,7 +33,7 @@ const ServiceDetail = () => {
     <main className="pt-20">
       <section className="section-padding">
         <div className="container-wide">
-          <Link to="/services" className="label-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2">
+          <Link to="/services" className="label-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2">
             <ArrowLeft className="w-4 h-4" /> All Services
           </Link>
 

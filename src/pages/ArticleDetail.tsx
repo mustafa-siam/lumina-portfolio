@@ -41,7 +41,7 @@ const ArticleDetail = () => {
 
       <section className="section-padding-sm">
         <div className="container-wide max-w-3xl">
-          <Link to="/journal" className="label-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2">
+          <Link to="/journal" className="label-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2">
             <ArrowLeft className="w-4 h-4" /> Back to Journal
           </Link>
 

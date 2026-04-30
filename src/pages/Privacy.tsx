@@ -5,8 +5,8 @@ const sections = [
   { title: "How We Use Information", body: "Your information is used solely to respond to inquiries, prepare proposals, and improve the experience of our website. We never sell your data." },
   { title: "Cookies", body: "We use minimal first-party cookies to remember your preferences and measure aggregated traffic. You can disable cookies in your browser settings." },
   { title: "Data Sharing", body: "We do not share your personal information with third parties except as required by law or with trusted service providers (e.g. email delivery) bound by confidentiality." },
-  { title: "Your Rights", body: "You may request access, correction, or deletion of your personal data at any time by emailing privacy@aura.studio." },
-  { title: "Contact", body: "Questions about this policy? Reach us at privacy@aura.studio." },
+  { title: "Your Rights", body: "You may request access, correction, or deletion of your personal data at any time by emailing privacy@Lumina.studio." },
+  { title: "Contact", body: "Questions about this policy? Reach us at privacy@Lumina.studio." },
 ];
 
 const Privacy = () => (

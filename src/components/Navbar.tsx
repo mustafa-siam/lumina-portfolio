@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container-wide flex items-center justify-between h-20">
         <Link to="/" className="font-heading text-xl font-semibold tracking-tight text-foreground">
-          AURA<span className="text-accent">.</span>
+          Lumina<span className="text-accent font-bold text-4xl">.</span>
         </Link>
 
         {/* Desktop */}
@@ -31,7 +31,7 @@ const Navbar = () => {
               className={`label-sm transition-colors duration-300 ${
                 location.pathname === link.path
                   ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-accent"
               }`}
             >
               {link.label}

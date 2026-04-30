@@ -15,7 +15,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2012", event: "AURA Studio founded in New York City" },
+  { year: "2012", event: "Lumina Studio founded in New York City" },
   { year: "2015", event: "First international project — Lisbon boutique hotel" },
   { year: "2018", event: "AIA Award for Excellence in Residential Design" },
   { year: "2020", event: "Expanded to Dubai and Bali offices" },
@@ -30,7 +30,7 @@ const About = () => {
       <section className="section-padding">
         <div className="container-wide">
           <ScrollReveal>
-            <span className="label-sm text-accent">About AURA</span>
+            <span className="label-sm text-accent">About Lumina</span>
             <h1 className="heading-xl mt-3 text-foreground max-w-4xl">
               We Believe Great Architecture Changes Everything
             </h1>
@@ -41,7 +41,7 @@ const About = () => {
       {/* Image */}
       <ScrollReveal>
         <div className="container-wide">
-          <img src={aboutImage} alt="AURA Studio team at work" loading="lazy" width={1200} height={800} className="img-cover w-full aspect-[16/9] rounded-sm" />
+          <img src={aboutImage} alt="Lumina Studio team at work" loading="lazy" width={1200} height={800} className="img-cover w-full aspect-[16/9] rounded-sm" />
         </div>
       </ScrollReveal>
 
@@ -53,7 +53,7 @@ const About = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <p className="body-lg">
-              Founded in 2012 by Elena Cortez, AURA Studio was born from a simple conviction: architecture should move people. Not just shelter them — inspire them, calm them, energize them.
+              Founded in 2012 by Elena Cortez, Lumina Studio was born from a simple conviction: architecture should move people. Not just shelter them — inspire them, calm them, energize them.
             </p>
             <p className="body-md mt-4">
               What began as a one-woman practice in a Brooklyn loft has grown into a globally recognized studio with offices in New York, Dubai, and Bali. Our team of 35 architects, designers, and creative strategists shares a relentless commitment to craft and a deep respect for context — whether that's a beachfront villa in Malibu or a civic landmark in Chicago.
@@ -116,7 +116,7 @@ const About = () => {
             <span className="label-sm text-accent">The Founder</span>
             <h2 className="heading-lg mt-3 text-foreground">Elena Cortez</h2>
             <p className="body-lg mt-6">
-              "I've always believed that architecture is the most honest art form. You can't fake how a building makes you feel. That authenticity is what drives everything we do at AURA."
+              "I've always believed that architecture is the most honest art form. You can't fake how a building makes you feel. That authenticity is what drives everything we do at Lumina."
             </p>
             <p className="body-md mt-4">
               Elena holds a Master's in Architecture from Columbia University and has been recognized with the AIA Young Architect Award, the Pritzker Emerging Voice distinction, and Architectural Digest's Top 100 designers list.

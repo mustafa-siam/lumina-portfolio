@@ -36,7 +36,7 @@ export const articles: Article[] = [
     tags: ["Process", "Methodology", "Studio"],
     sections: [
       {
-        body: "Every project at AURA begins not with a sketch, but with a conversation. Long, often meandering, occasionally uncomfortable conversations with our clients about how they actually live, what they avoid, what they crave. The drawings come later — much later.",
+        body: "Every project at Lumina begins not with a sketch, but with a conversation. Long, often meandering, occasionally uncomfortable conversations with our clients about how they actually live, what they avoid, what they crave. The drawings come later — much later.",
       },
       {
         heading: "Listening as a discipline",

@@ -28,8 +28,8 @@ const Contact = () => {
               <div className="mt-16 space-y-8">
                 <div>
                   <h3 className="label-sm mb-2">Email</h3>
-                  <a href="mailto:hello@aura.studio" className="heading-sm text-foreground hover:text-accent transition-colors">
-                    hello@aura.studio
+                  <a href="mailto:hello@Lumina.studio" className="heading-sm text-foreground hover:text-accent transition-colors">
+                    hello@Lumina.studio
                   </a>
                 </div>
                 <div>
@@ -90,35 +90,39 @@ const Contact = () => {
                   </div>
                   <div>
                     <label className="label-sm mb-2 block">Project Type</label>
-                    <select
-                      value={form.type}
-                      onChange={(e) => setForm({ ...form, type: e.target.value })}
-                      className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-accent outline-none transition-colors font-body"
-                    >
-                      <option value="">Select type</option>
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="hospitality">Hospitality</option>
-                      <option value="interior">Interior Design</option>
-                      <option value="renovation">Renovation</option>
-                      <option value="consultation">Consultation</option>
-                    </select>
+                    <div className="w-full overflow-hidden">
+                      <select
+                        value={form.type}
+                        onChange={(e) => setForm({ ...form, type: e.target.value })}
+                        className="w-full min-w-0 bg-transparent cursor-pointer border-b border-border py-3 text-foreground focus:border-accent outline-none transition-colors font-body"
+                      >
+                        <option value="">Select type</option>
+                        <option value="residential">Residential</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="interior">Interior Design</option>
+                        <option value="renovation">Renovation</option>
+                        <option value="consultation">Consultation</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <label className="label-sm mb-2 block">Estimated Budget</label>
-                  <select
-                    value={form.budget}
-                    onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-accent outline-none transition-colors font-body"
-                  >
-                    <option value="">Select range</option>
-                    <option value="100k-500k">$100K – $500K</option>
-                    <option value="500k-1m">$500K – $1M</option>
-                    <option value="1m-5m">$1M – $5M</option>
-                    <option value="5m+">$5M+</option>
-                  </select>
+                  <div className="w-full overflow-hidden">
+                    <select
+                      value={form.budget}
+                      onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                      className="w-full min-w-0 bg-transparent border-b border-border py-3 text-foreground focus:border-accent outline-none transition-colors font-body cursor-pointer"
+                    >
+                      <option value="">Select range</option>
+                      <option value="100k-500k">$100K – $500K</option>
+                      <option value="500k-1m">$500K – $1M</option>
+                      <option value="1m-5m">$1M – $5M</option>
+                      <option value="5m+">$5M+</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
