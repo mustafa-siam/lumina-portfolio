@@ -1,10 +1,10 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
 import aboutImage from "@/assets/about.jpg";
-import founderImage from "@/assets/founder.jpg";
+import founder from "@/assets/founder.webp";
 
 const team = [
-  { name: "Elena Cortez", role: "Founder & Principal Architect", image: founderImage },
+  { name: "Elena Cortez", role: "Founder & Principal Architect", image: founder },
 ];
 
 const values = [
@@ -110,7 +110,7 @@ const About = () => {
       <section className="section-padding bg-secondary">
         <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
-            <img src={founderImage} alt="Elena Cortez" loading="lazy" width={800} height={1000} className="img-cover aspect-[3/4] rounded-sm" />
+            <img src={founder} alt="Elena Cortez" loading="lazy" width={800} height={1000} className="img-cover aspect-[3/4] rounded-sm" />
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <span className="label-sm text-accent">The Founder</span>
