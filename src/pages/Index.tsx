@@ -8,7 +8,7 @@ import TestimonialSlider from "@/components/TestimonialSlider";
 import { projects } from "@/lib/projects";
 import { articles } from "@/lib/journal";
 import heroImage from "@/assets/hero-1.jpg";
-import founderImage from "@/assets/founder.jpg";
+import founder from "@/assets/founder.webp";
 import { useState } from "react";
 
 const stats = [
@@ -67,7 +67,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <main>
       {/* HERO */}
-     <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center">
   {/* Background */}
   <div className="absolute inset-0">
     <motion.img
@@ -90,7 +90,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
   </div>
 
   {/* Content */}
-   <div className="relative px-6">
+  <div className="relative px-6">
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -119,10 +119,10 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
       </p>
 
       {/* Buttons */}
-      <div className="flex justify-center gap-5 mt-12 flex-wrap">
+      <div className="flex flex-col sm:flex-row justify-center gap-5 mt-12 w-full sm:w-auto">
         <Link
           to="/projects"
-          className="group px-9 py-4 bg-white text-black text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-accent transition"
+          className="group w-full sm:w-auto px-9 py-4 bg-white text-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-accent transition"
         >
           View Work
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
@@ -130,7 +130,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
 
         <Link
           to="/contact"
-          className="px-9 py-4 border border-white text-white text-sm uppercase tracking-wider hover:bg-white hover:text-black transition"
+          className="w-full sm:w-auto px-9 py-4 border border-white text-white text-sm uppercase tracking-wider hover:bg-white hover:text-black transition text-center"
         >
           Start Project
         </Link>
@@ -138,11 +138,12 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
     </motion.div>
   </div>
 
-  {/* Architectural Scroll Indicator (Bottom Right) */}
-  <div className="absolute bottom-10 right-10 flex flex-col items-center gap-4">
+  {/* Architectural Scroll Indicator (Bottom Right - FIXED MOBILE) */}
+  <div className="absolute bottom-0 sm:bottom-10 right-1 sm:right-10 flex flex-col items-center gap-4">
     <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 [writing-mode:vertical-lr]">
       Scroll
     </span>
+
     <div className="w-[1px] h-16 bg-white/10 relative overflow-hidden">
       <motion.div
         animate={{ y: [-64, 64] }}
@@ -242,7 +243,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <img
-              src={founderImage}
+              src={founder}
               alt="Elena Cortez, Founder of Lumina Studio"
               loading="lazy"
               width={800}
