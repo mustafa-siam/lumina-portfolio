@@ -9,11 +9,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState } from "react";
 
 const ServiceDetail = () => {
   const { id } = useParams();
   const service = getServiceById(id || "");
-
+const [openIndex, setOpenIndex] = useState<number | null>(null);
   if (!service) {
     return (
       <main className="pt-20 section-padding">
@@ -155,35 +156,40 @@ const ServiceDetail = () => {
           </motion.div>
         </div>
 
-        {/* Right Side: FAQ Accordion */}
-        <div className="lg:col-span-7">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {service.faq.map((f, i) => (
-                <AccordionItem 
-                  key={i} 
-                  value={`item-${i}`} 
-                  className="border border-border/50 rounded-xl px-6 bg-card/30 backdrop-blur-sm transition-all hover:bg-card/50"
-                >
-                  <AccordionTrigger className="text-left font-heading text-lg py-5 hover:no-underline group">
-                    <span className="group-hover:text-accent transition-colors">
-                      {f.q}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="body-md pb-6 text-muted-foreground leading-relaxed">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
-        </div>
-        
+       {/* Right Side: Custom FAQ (no accordion) */}
+<div className="lg:col-span-7 divide-y divide-border border border-border rounded-xl overflow-hidden">
+  {service.faq.map((f, i) => (
+    <div key={i} className="bg-background">
+      
+      {/* Question */}
+      <div
+        onClick={() => setOpenIndex(openIndex === i ? null : i)}
+        className="flex items-center justify-between font-heading text-lg text-foreground p-6 cursor-pointer"
+      >
+        {f.q}
+
+        <span
+          className={`text-accent text-2xl transition-transform duration-300 ${
+            openIndex === i ? "rotate-45" : ""
+          }`}
+        >
+          +
+        </span>
+      </div>
+
+      {/* Answer */}
+      <div
+        className={`transition-all duration-300 overflow-hidden ${
+          openIndex === i ? "max-h-40 opacity-100 pb-6 px-6" : "max-h-0 opacity-0 px-6"
+        }`}
+      >
+        <p className="body-md text-muted-foreground leading-relaxed">
+          {f.a}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </section>
       {/* Other services */}

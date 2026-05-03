@@ -67,83 +67,91 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <main>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <motion.img
-            src={heroImage}
-            alt="Modern architecture interior"
-            width={1920}
-            height={1080}
-            className="img-cover h-full"
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-        </div>
+     <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-center">
+  {/* Background */}
+  <div className="absolute inset-0">
+    <motion.img
+      src={heroImage}
+      alt="Modern architecture interior"
+      className="w-full h-full object-cover"
+      initial={{ scale: 1.08 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 2.5, ease: "easeOut" }}
+    />
+    <div className="absolute inset-0 bg-black/70" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+  </div>
 
-        {/* Side label */}
-        <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-left label-sm text-white/60">
-          <span>Est. 2012 — New York · Dubai · Bali</span>
-        </div>
+  {/* Side Label - Vertically Centered & Fixed Positioning */}
+  <div className="hidden lg:flex absolute left-8 h-full items-center justify-center pointer-events-none">
+    <div className="rotate-180 [writing-mode:vertical-lr] text-white/40 text-[10px] tracking-[0.4em] uppercase font-light">
+      Est. 2012 — New York · Dubai · Bali
+    </div>
+  </div>
 
-        <div className="relative container-wide pb-16 md:pb-24 pt-32">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <span className="label-sm text-accent">Architecture · Interior Design · Master Planning</span>
-            <h1 className="heading-xl mt-4 max-w-5xl text-white drop-shadow-lg">
-              We Design Spaces<br />
-              <span className="italic font-extralight">That Shape Lives</span>
-            </h1>
-            <p className="text-lg md:text-xl leading-relaxed mt-6 max-w-xl text-white/85">
-              An award-winning studio crafting extraordinary residential, commercial, and hospitality spaces across four continents — for clients who refuse to settle.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-10">
-              <Link
-                to="/projects"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-heading text-sm font-medium tracking-wider uppercase hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
-              >
-                View Our Work
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-8 py-4 border border-white text-white font-heading text-sm font-medium tracking-wider uppercase hover:bg-white hover:text-black transition-colors duration-300"
-              >
-                Start a Project
-              </Link>
-            </div>
+  {/* Content */}
+   <div className="relative px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="max-w-5xl mx-auto"
+    >
+      <span className="block text-accent text-xs tracking-[0.4em] uppercase mt-12 mb-6">
+        Architecture · Interior · Planning
+      </span>
 
-            {/* Quick highlights */}
-            <div className="grid grid-cols-3 gap-6 md:gap-12 mt-16 max-w-2xl">
-              {[
-                { v: "150+", l: "Projects" },
-                { v: "8", l: "Countries" },
-                { v: "12", l: "Awards" },
-              ].map((h) => (
-                <div key={h.l}>
-                  <div className="font-heading text-3xl md:text-4xl font-light text-white">{h.v}</div>
-                  <div className="text-xs uppercase tracking-[0.2em] font-medium text-white/70 mt-1 font-heading">{h.l}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+      {/* Bigger headline */}
+      <h1 className="text-white font-light leading-[1.05] text-5xl md:text-7xl lg:text-8xl">
+        We Design Spaces
+      </h1>
 
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-6 right-6 label-sm text-white/70"
+      <h2 className="text-white/80 italic font-extralight text-4xl md:text-6xl mt-5">
+        That Shape Lives
+      </h2>
+
+      {/* Divider */}
+      <div className="w-20 h-[2px] bg-accent mx-auto my-10" />
+
+      <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+        An award-winning studio crafting extraordinary residential,
+        commercial, and hospitality spaces across four continents.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex justify-center gap-5 mt-12 flex-wrap">
+        <Link
+          to="/projects"
+          className="group px-9 py-4 bg-white text-black text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-accent transition"
         >
-          Scroll ↓
-        </motion.div>
-      </section>
+          View Work
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+        </Link>
 
+        <Link
+          to="/contact"
+          className="px-9 py-4 border border-white text-white text-sm uppercase tracking-wider hover:bg-white hover:text-black transition"
+        >
+          Start Project
+        </Link>
+      </div>
+    </motion.div>
+  </div>
+
+  {/* Architectural Scroll Indicator (Bottom Right) */}
+  <div className="absolute bottom-10 right-10 flex flex-col items-center gap-4">
+    <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 [writing-mode:vertical-lr]">
+      Scroll
+    </span>
+    <div className="w-[1px] h-16 bg-white/10 relative overflow-hidden">
+      <motion.div
+        animate={{ y: [-64, 64] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        className="absolute top-0 w-full h-full bg-accent"
+      />
+    </div>
+  </div>
+</section>
       {/* PRESS / SOCIAL PROOF MARQUEE */}
       <section className="border-y border-border py-8 overflow-hidden bg-secondary/40">
         <div className="container-wide mb-4">
