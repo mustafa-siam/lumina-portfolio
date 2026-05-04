@@ -8,7 +8,7 @@ import TestimonialSlider from "@/components/TestimonialSlider";
 import { projects } from "@/lib/projects";
 import { articles } from "@/lib/journal";
 import heroImage from "@/assets/hero-1.jpg";
-import founder from "@/assets/founder.webp";
+import founder from "@/assets/founder.png";
 import { useState } from "react";
 
 const stats = [

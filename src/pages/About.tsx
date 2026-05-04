@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
 import aboutImage from "@/assets/about.jpg";
-import founder from "@/assets/founder.webp";
+import founder from "@/assets/founder.png";
 
 const team = [
   { name: "Elena Cortez", role: "Founder & Principal Architect", image: founder },
