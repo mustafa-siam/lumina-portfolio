@@ -14,7 +14,7 @@ const ArticleDetail = () => {
         <div className="container-wide text-center">
           <h1 className="heading-lg text-foreground">Article Not Found</h1>
           <Link to="/journal" className="label-sm text-accent mt-6 inline-block">
-            ← Back to Journal
+            <span className="inline-block transform -translate-y-0.5">←</span> Back to Journal
           </Link>
         </div>
       </main>
@@ -40,7 +40,7 @@ const ArticleDetail = () => {
       </motion.div>
 
       <section className="section-padding-sm">
-        <div className="container-wide max-w-3xl">
+        <div className="container-wide max-w-7xl">
           <Link to="/journal" className="label-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2">
             <ArrowLeft className="w-4 h-4" /> Back to Journal
           </Link>

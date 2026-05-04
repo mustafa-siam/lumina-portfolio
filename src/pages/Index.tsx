@@ -187,7 +187,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
         <div className="container-wide grid grid-cols-1 md:grid-cols-3 gap-10">
           {valueProps.map((v, i) => (
             <ScrollReveal key={v.title} delay={i * 0.1}>
-              <div className="border-t border-foreground pt-6">
+              <div className=" pt-6">
                 <v.icon className="w-6 h-6 text-accent" />
                 <h3 className="heading-sm mt-4 text-foreground">{v.title}</h3>
                 <p className="body-md mt-2">{v.desc}</p>
@@ -208,9 +208,9 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
               </div>
               <Link
                 to="/projects"
-                className="label-sm text-foreground hover:text-accent transition-colors inline-flex items-center gap-2"
+                className="label-sm text-foreground hover:text-accent transition-colorsgap-2"
               >
-                View All Projects →
+                View All Projects <span className="inline-block transform -translate-y-0.5">→</span>
               </Link>
             </div>
           </ScrollReveal>
@@ -238,7 +238,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
               to="/about"
               className="inline-flex items-center mt-8 label-sm text-foreground hover:text-accent transition-colors gap-2"
             >
-              Learn More About Us →
+              Learn More About Us <span className="inline-block transform -translate-y-0.5">→</span>
             </Link>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
@@ -278,7 +278,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
                     to="/services"
                     className="inline-flex items-center mt-6 text-sm text-muted-foreground hover:text-accent transition-colors gap-1"
                   >
-                    Learn more →
+                    Learn more <span className="inline-block transform -translate-y-0.5">→</span>
                   </Link>
                 </div>
               </ScrollReveal>
@@ -297,7 +297,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
                 <h2 className="heading-lg mt-3 text-background">A Process Built on Listening</h2>
               </div>
               <Link to="/services" className="label-sm text-background/70 hover:text-accent transition-colors">
-                See Full Process →
+                See Full Process <span className="inline-block transform -translate-y-0.5">→</span>
               </Link>
             </div>
           </ScrollReveal>
@@ -310,7 +310,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
               { n: "05", t: "Reveal" },
             ].map((p, i) => (
               <ScrollReveal key={p.n} delay={i * 0.1}>
-                <div className="border-t border-background/30 pt-4">
+                <div className=" pt-4">
                   <span className="label-sm text-accent">{p.n}</span>
                   <h3 className="heading-sm mt-2 text-background">{p.t}</h3>
                 </div>
@@ -345,7 +345,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
                 <h2 className="heading-lg mt-3 text-foreground">Insights & Process</h2>
               </div>
               <Link to="/journal" className="label-sm text-foreground hover:text-accent transition-colors">
-                Read All Articles →
+                Read All Articles <span className="inline-block transform -translate-y-0.5">→</span>
               </Link>
             </div>
           </ScrollReveal>

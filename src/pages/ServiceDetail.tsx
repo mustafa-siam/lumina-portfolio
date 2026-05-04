@@ -21,7 +21,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
         <div className="container-wide text-center">
           <h1 className="heading-lg text-foreground">Service Not Found</h1>
           <Link to="/services" className="label-sm text-accent mt-6 inline-block">
-            ← Back to Services
+            <span className="inline-block transform -translate-y-0.5">←</span> Back to Services
           </Link>
         </div>
       </main>

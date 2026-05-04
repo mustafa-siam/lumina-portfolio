@@ -19,7 +19,7 @@ const ProjectDetail = () => {
         <div className="container-wide text-center">
           <h1 className="heading-lg text-foreground">Project Not Found</h1>
           <Link to="/projects" className="label-sm text-accent mt-6 inline-block">
-            ← Back to Projects
+            <span className="inline-block transform -translate-y-0.5">←</span> Back to Projects
           </Link>
         </div>
       </main>
@@ -62,7 +62,7 @@ const ProjectDetail = () => {
       <section className="section-padding-sm">
         <div className="container-wide">
           <Link to="/projects" className="label-sm text-muted-foreground hover:text-accent transition-colors">
-            ← Back to All Projects
+            <span className="inline-block transform -translate-y-0.5">←</span> Back to All Projects
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-10">
@@ -314,7 +314,7 @@ const ProjectDetail = () => {
                 <h2 className="heading-lg mt-2 text-foreground">Related Projects</h2>
               </div>
               <Link to="/projects" className="label-sm hover:text-accent transition-colors">
-                View All →
+                View All <span className="inline-block transform -translate-y-0.5">→</span>
               </Link>
             </div>
           </ScrollReveal>
